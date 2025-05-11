@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;800&display=swap" rel="stylesheet">
 	<script>
 		(function (root, name, factory) {
   'use strict';
@@ -2241,42 +2242,41 @@ body {
 }
 
 .tabs-container {
-    background: rgba(10, 19, 32, 0.7); /* Semi-transparent */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: rgba(15, 25, 35, 0.85); /* Softer glass */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
-    height: 40px; /* Slightly taller for elegance */
+    height: 44px; /* Slightly shorter for simplicity */
     overflow-x: auto;
-    gap: 0;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    box-shadow: inset 0 -1px 0 rgba(0, 162, 255, 0.1); /* Neon hint */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 4px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: inset 0 -1px 0 rgba(0, 162, 255, 0.1); /* Minimal shadow */
+    transition: all 0.15s ease-out;
 }
-     .tab {
+
+.tab {
     display: flex;
     align-items: center;
-    padding: 0 15px;
-    background: transparent; /* Transparent for glassmorphism */
-    color: #D1D5DB; /* Softer gray */
+    padding: 0 16px;
+    color: #D0DCE8;
     min-width: 120px;
-    max-width: 200px;
+    max-width: 240px;
     position: relative;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+    transition: all 0.15s ease-out;
     user-select: none;
-    border-radius: 6px; /* Slight rounding */
+    border-radius: 8px;
+    background: rgba(20, 30, 40, 0.6); /* Lighter glass */
 }
 .tab:hover {
-    background: rgba(28, 37, 38, 0.5); /* Subtle hover with glass */
+    background: rgba(20, 30, 40, 0.8);
     color: #FFFFFF;
 }
-      .tab.active {
-    background: linear-gradient(90deg, #1C2526, #1C2526CC); /* Gradient depth */
+.tab.active {
+    background: rgba(20, 30, 40, 0.9);
     color: #FFFFFF;
-    border-bottom: 2px solid #00A2FF;
-    box-shadow: 0 2px 12px rgba(0, 162, 255, 0.3); /* Neon glow */
-    border-radius: 6px;
+    border-bottom: 1px solid #00A2FF66; /* Thinner, subtler border */
 }
       .tab-icon {
     width: 20px;
@@ -2302,82 +2302,103 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 14px; /* Slightly larger */
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    color: #D1D5DB;
-    transition: color 0.3s ease;
+    font-size: 18px; /* Slightly smaller */
+    font-family: 'Exo 2', 'Orbitron', sans-serif;
+    font-weight: 500; /* Lighter weight */
+    color: #D0DCE8; /* Softer platinum */
+    transition: color 0.15s ease-out;
+    padding: 0 14px; /* Balanced spacing */
+}
+.tab-title:hover {
+    color: #FFFFFF;
 }
 .tab-title.editing {
-    background: rgba(58, 79, 90, 0.8); /* Glassy edit background */
-    border: 1px solid #00A2FF;
-    padding: 2px 6px;
-    border-radius: 4px;
+    background: rgba(20, 30, 40, 0.9); /* Simplified glass */
+    border: 1px solid #00A2FF44; /* Subtle border */
+    padding: 6px 12px;
+    border-radius: 6px;
     outline: none;
     color: #FFFFFF;
-    transition: all 0.3s ease;
+    transition: all 0.15s ease-out;
+}
 }
       .tab-close {
-    margin-left: 8px;
-    opacity: 0.6;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 10px; /* Clean spacing */
+    opacity: 0.8; /* Softer default */
+    transition: opacity 0.15s ease-out, color 0.15s ease-out; /* Smooth */
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.1);
+    width: 26px; /* Slightly smaller */
+    height: 26px;
+    color: #D0DCE8; /* Softer platinum */
+    font-size: 20px; /* Slightly smaller */
+    font-family: 'Exo 2', 'Orbitron', sans-serif;
+    font-weight: 500; /* Lighter weight for simplicity */
+    line-height: 26px; /* Perfect centering */
 }
 .tab-close:hover {
     opacity: 1;
-    background: rgba(0, 162, 255, 0.3);
-    box-shadow: 0 0 10px rgba(0, 162, 255, 0.4); /* Neon glow */
-    color: #FFFFFF;
+    color: #00A2FF; /* Subtle neon */
 }
-      .tab.new-tab {
-    min-width: 10px;
-    max-width: 10px;
+
+.tab.new-tab {
+    min-width: 14px;
+    max-width: 14px;
     justify-content: center;
-    background: transparent;
-    border: none;
-    margin-left: -2px;
+    margin-left: 6px; /* Clean spacing */
     color: #00A2FF;
-    border-radius: 50%;
-    padding: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 8px;
+    transition: color 0.15s ease-out;
+    font-size: 20px;
+    font-family: 'Exo 2', 'Orbitron', sans-serif;
+    font-weight: 500; /* Lighter weight */
+    line-height: 26px;
 }
 .tab.new-tab:hover {
-    background: rgba(0, 162, 255, 0.3);
-    box-shadow: 0 0 10px rgba(0, 162, 255, 0.4); /* Neon glow */
-    color: #FFFFFF;
+    color: #D0DCE8; /* Softer hover */
 }
 }
-     @keyframes tabAppear {
-    from {
+    @keyframes tabAppear {
+    0% {
         opacity: 0;
-        transform: translateY(-15px);
-        filter: blur(2px);
+        transform: translateY(-6px) scale(0.95); /* Subtle slide and scale-in */
+        filter: brightness(0.9); /* Slight dim for depth */
     }
-    to {
+    50% {
+        opacity: 0.7;
+        transform: translateY(-2px) scale(0.98); /* Mid-point lift */
+    }
+    100% {
         opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
+        transform: translateY(0) scale(1); /* Smooth landing */
+        filter: brightness(1); /* Full brightness */
     }
 }
+
 @keyframes tabRemove {
-    to {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1); /* Start at normal state */
+        filter: brightness(1);
+    }
+    40% {
+        opacity: 0.6;
+        transform: translateX(-4px) scale(0.97); /* Gentle shrink and slide */
+    }
+    100% {
         opacity: 0;
-        transform: translateX(-15px);
-        filter: blur(2px);
+        transform: translateX(-6px) scale(0.95); /* Final fade-out */
+        filter: brightness(0.8); /* Slight fade effect */
     }
 }
+
 .tab.new {
-    animation: tabAppear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: tabAppear 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Advanced easing for smoothness */
 }
+
 .tab.removing {
-    animation: tabRemove 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: tabRemove 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Advanced easing for clean exit */
 }
   </style>
   <script src="vs/loader.js"></script>
@@ -2666,43 +2687,47 @@ function setupAutosave() {
 
 			editor = monaco.editor.create(document.getElementById('container'), {
     language: 'lua',
-    theme: "net-theme-dark",
+    theme: "net-theme-dark", // Revert to your custom theme
     acceptSuggestionOnEnter: "smart",
-    cursorSmoothCaretAnimation: "on", // Smoother cursor animation
-    cursorBlinking: "smooth", // Smooth cursor blinking
-    cursorStyle: "line-thin", // Thinner cursor for a modern look
-    fontFamily: "'Fira Code', 'JetBrains Mono', monospace", // Modern monospaced font
-    fontSize: 14, // Slightly larger for readability
-    fontLigatures: true, // Enable ligatures for a polished look
-    lineHeight: 22, // Increased line height for spacing
+    cursorSmoothCaretAnimation: "on",
+    cursorBlinking: "smooth",
+    cursorStyle: "line",
+    cursorWidth: 2,
+    fontFamily: "'JetBrains Mono', 'Consolas', monospace", // Optimized font
+    fontSize: 17,
+    fontWeight: "400",
+    fontLigatures: false,
+    letterSpacing: 0,
+    lineHeight: 24, // Matches "vs-dark" alignment
     padding: {
-        top: 20, // More padding for a spacious feel
-        bottom: 20,
+        top: 16,
+        bottom: 16,
     },
     lineNumbers: "on",
-    lineNumbersMinChars: 2, // Minimalistic line numbers
-    glyphMargin: false, // Disable glyph margin for a cleaner look
+    lineNumbersMinChars: 4,
+    glyphMargin: false,
     folding: true,
-    showFoldingControls: "mouseover", // Show folding controls only on hover
-    foldingHighlight: true, // Subtle folding highlight
+    showFoldingControls: "mouseover",
+    foldingHighlight: false,
     dragAndDrop: true,
     links: false,
     minimap: {
-        enabled: false, // Keep minimap disabled for a cleaner look
+        enabled: false,
     },
     smoothScrolling: true,
-    scrollBeyondLastLine: false, // Prevent unnecessary scrolling
+    scrollBeyondLastLine: false,
     scrollbar: {
         vertical: "visible",
         horizontal: "visible",
-        useShadows: false, // No shadows for a flat, modern look
-        verticalScrollbarSize: 6, // Thinner scrollbar
-        horizontalScrollbarSize: 6,
-        verticalSliderSize: 6,
-        horizontalSliderSize: 6,
+        useShadows: false,
+        verticalScrollbarSize: 8,
+        horizontalScrollbarSize: 8,
+        verticalSliderSize: 8,
+        horizontalSliderSize: 8,
     },
-    renderLineHighlight: "line", // Subtle line highlight
-    renderWhitespace: "none", // Hide whitespace for a cleaner look
+    renderLineHighlight: "none",
+    renderWhitespace: "none",
+    renderControlCharacters: false,
     suggest: {
         snippetsPreventQuickSuggestions: false,
     },
