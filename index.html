@@ -2242,6 +2242,7 @@ body {
 }
 
 .tabs-container {
+	scroll-behavior: smooth;
     background: rgba(15, 25, 35, 0.85); /* Softer glass */
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
@@ -2270,6 +2271,8 @@ body {
     background: rgba(20, 30, 40, 0.6); /* Lighter glass */
 }
 .tab:hover {
+	transform: scale(1.02); /* Subtle zoom */
+    transition: transform 0.15s ease-out;
     background: rgba(20, 30, 40, 0.8);
     color: #FFFFFF;
 }
